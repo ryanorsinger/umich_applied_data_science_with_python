@@ -1,10 +1,16 @@
 import numpy as np
 import pandas as pd
 
-energy_url = "http://unstats.un.org/unsd/environment/excel_file_tables/2013/Energy%20Indicators.xls"
+energy_url = "EnergyIndicators.xls"
 
-raw_energy = pd.read_excel(energy_url)
+energy = pd.read_excel(energy_url)
 
-# drop the headers
-print(raw_energy[14:22])
+# drops all the header and footer lines
+energy = energy.iloc[15:243]
 
+print(energy)
+
+# print(list(raw_energy.columns.values))z
+# print(list(raw_energy.loc[14]))
+
+# assign columns "Country", "Energy Supply", "Energy Supply per Capita", "% Renewable"
