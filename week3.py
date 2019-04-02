@@ -10,7 +10,4 @@ energy = energy.iloc[15:243]
 
 print(energy)
 
-# print(list(raw_energy.columns.values))z
-# print(list(raw_energy.loc[14]))
-
 # assign columns "Country", "Energy Supply", "Energy Supply per Capita", "% Renewable"
