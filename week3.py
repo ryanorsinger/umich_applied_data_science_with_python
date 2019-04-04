@@ -60,3 +60,12 @@ GDP["Country Name"] = GDP["Country Name"].replace(country_renames)
 
 # Acquire Sciamgo Journal and Country Rank data for energy engineering and power technology
 ScimEn = pd.read_excel("./scimagojr-3.xlsx")
+
+
+# Join the three datasets: GDP, Energy, and ScimEn using the intersection of country names. 
+# Use only the last 10 years (2006-2015) of GDP data and only the top 15 countries by Scimagojr 'Rank' (Rank 1 through 15).
+
+# The index of this DataFrame should be the name of the country
+# columns should be:
+#  ['Rank', 'Documents', 'Citable documents', 'Citations', 'Self-citations', 'Citations per document', 'H index', 'Energy Supply', 'Energy Supply per Capita', '% Renewable', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'].
+
