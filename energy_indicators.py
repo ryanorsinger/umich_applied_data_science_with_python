@@ -47,16 +47,3 @@ energy["Energy Supply"] = pd.to_numeric(energy["Energy Supply"], errors="coerce"
 energy["Energy Supply per Capita"] = pd.to_numeric(energy["Energy Supply per Capita"], errors="coerce")
 energy["% Renewable"] = pd.to_numeric(energy["% Renewable"], errors="coerce")
 
-
-## Acquire GDP Data
-GDP = pd.read_csv("./world_bank.csv")
-
-country_renames = { "Korea, Rep.": "South Korea", 
-                    "Iran, Islamic Rep.": "Iran",
-                    "Hong Kong SAR, China": "Hong Kong"}
-
-GDP["Country Name"] = GDP["Country Name"].replace(country_renames)
-
-
-# Acquire Sciamgo Journal and Country Rank data for energy engineering and power technology
-ScimEn = pd.read_excel("./scimagojr-3.xlsx")
