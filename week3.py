@@ -56,14 +56,32 @@ country_renames = { "Korea, Rep.": "South Korea",
                     "Hong Kong SAR, China": "Hong Kong"}
 
 GDP["Country Name"] = GDP["Country Name"].replace(country_renames)
+GDP["Country"] = GDP["Country Name"]
 
 
 # Acquire Sciamgo Journal and Country Rank data for energy engineering and power technology
 ScimEn = pd.read_excel("./scimagojr-3.xlsx")
 
+# Join the three datasets: GDP, Energy, and ScimEn using the intersection of country names.
+a = GDP.merge(energy, how="inner", left_on="Country", right_on="Country")
+df = a.merge(ScimEn, how="inner", left_on="Country", right_on="Country")
 
-# Join the three datasets: GDP, Energy, and ScimEn using the intersection of country names. 
 # Use only the last 10 years (2006-2015) of GDP data and only the top 15 countries by Scimagojr 'Rank' (Rank 1 through 15).
+
+dates_to_drop = ['1960',
+ '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968', '1969', '1970',
+ '1971', '1972', '1973', '1974', '1975', '1976', '1977', '1978', '1979', '1980',
+ '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990',
+ '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000',
+ '2001', '2002', '2003', '2004', '2005', '2016', '2017', '2018']
+
+# TODO drop any date column not 2006-2015
+df = df.drop(dates_to_drop, axis=1)
+
+# TODO keep only the rows where RANK is 15 or less
+
+# df = df[df.Rank <= 15]
+
 
 # The index of this DataFrame should be the name of the country
 # columns should be:
