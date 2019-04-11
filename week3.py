@@ -58,7 +58,6 @@ country_renames = { "Korea, Rep.": "South Korea",
 GDP["Country Name"] = GDP["Country Name"].replace(country_renames)
 GDP["Country"] = GDP["Country Name"]
 
-
 # Acquire Sciamgo Journal and Country Rank data for energy engineering and power technology
 ScimEn = pd.read_excel("./scimagojr-3.xlsx")
 
@@ -87,3 +86,4 @@ df = df.drop(dates_to_drop, axis=1)
 # columns should be:
 #  ['Rank', 'Documents', 'Citable documents', 'Citations', 'Self-citations', 'Citations per document', 'H index', 'Energy Supply', 'Energy Supply per Capita', '% Renewable', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'].
 
+    

@@ -22,6 +22,17 @@ energy = energy.rename(columns = {
 
 energy['Energy Supply'] = energy['Energy Supply'] * 1000000
 
+
+country_renames = {
+    "Republic of Korea": "South Korea",
+    "United States of America": "United States",
+    "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
+    "China, Hong Kong Special Administrative Region": "Hong Kong"
+}
+
+energy.Country = energy.Country.replace(country_renames)
+
+
 def remove_parentheticals(x):
     """
         Removes any parenthetical expression from a string
