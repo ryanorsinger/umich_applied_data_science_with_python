@@ -1,0 +1,6 @@
+I disagree that we've come to the "end" of a theory. The scientific method is a process of skeptical empiricism. This approach to data driven decisions means we can reject the null hypothesis or fail to reject the null hypothesis. Outside of deduction, we're stuck with induction, and induction is all about using a not-disproven-yet hypothesis until a better or more accurate explanation reveals its value. 
+What we're seeing is that increasing numbers of individuals and institutions are OK with the false negatives and the false positives from their models. That being OK means that it's acceptable in their revenue model.
+Data alone does provide insight, but being able to query the data or the method is critical. If we're in a world of predictive policing, whitewashing data with data-laundering, or where youtube consistently suggests extremist videos to viewers who have no history or linkages, then we need to be able to have algorithms explain themselves. Black boxes can be tampered with, and they are consistently.
+We need to be able to put the data "on the stand" and cross-examine it.
+We need to be able to put methods "on the stand" and grill their results.
+We need to be able to put methodologies "on the stand" and have practitioners explain their results.

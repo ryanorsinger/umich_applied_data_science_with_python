@@ -5,7 +5,8 @@
 x = np.random.binomial(20, .5, 1000)
 print((x >= 15).mean())
 
+# or
+x = np.random.binomial(20, .5, 10000)
+results = x >= 15 # convert to a list of booleans
+results.mean()
 
-
-# x = np.random.binomial(20, .5, 10000)
-# print((x>=15).mean())
