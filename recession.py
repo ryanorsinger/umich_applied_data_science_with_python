@@ -12,7 +12,6 @@ def get_data():
 
     df = df.rename(index=int, columns=column_renames)
 
-
     # we only care ab  out quarters starting with 2001Q1
     # get the starting index
     start_index = df[df["quarters"] == "2000q1"].index[0]
@@ -31,3 +30,11 @@ def get_recession_start():
 
 df = get_data()
 
+df["diff1"] = df.gdp.diff(1)
+df["diff2"] = df.gdp.diff(2)
+
+df["last_two_quarters_shrinking"] = (df.diff1 < 0) & (df.diff2 < df.diff1)
+df["last_two_quarters_growing"] = (df.diff1 > 0) & (df.diff2 > df.diff1)
+
+
+quarters_in_recession = df[df.recession_start]
